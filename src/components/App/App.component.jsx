@@ -1,9 +1,7 @@
 import React from 'react';
 
-const App = () => (
-  <div>
-    <h1>React Web Boilerplate</h1>
-  </div>
-);
+import Router from '@/components/Router';
+
+const App = () => <Router />;
 
 export default App;
