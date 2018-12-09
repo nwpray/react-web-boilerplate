@@ -3,9 +3,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import Immutable from 'immutable';
+import createSagaMiddleware from 'redux-saga';
 
 import Router from '@/components/Router';
-import { reducer } from '@/store';
+import { reducer, saga } from '@/store';
 
 const logger = createLogger({
   stateTransformer: state =>
@@ -18,7 +19,11 @@ const logger = createLogger({
     )
 });
 
-const store = createStore(reducer, applyMiddleware(logger));
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(reducer, applyMiddleware(logger, sagaMiddleware));
+
+sagaMiddleware.run(saga);
 
 const App = () => (
   <Provider {...{ store }}>

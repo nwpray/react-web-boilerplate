@@ -1,4 +1,7 @@
-export default (actionHandlers = {}, initState = {}) => (state, { type, ...restOfAction }) => {
+export default (actionHandlers = {}, initState = {}) => (
+  state = initState,
+  { type, ...restOfAction }
+) => {
   if (typeof actionHandlers[type] !== 'undefined') return actionHandlers[type](state, restOfAction);
-  return initState;
+  return state;
 };
