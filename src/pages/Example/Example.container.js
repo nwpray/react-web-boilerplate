@@ -14,7 +14,4 @@ const mapDispatchToProps = dispatch => ({
   onSagaClick: () => dispatch(actions.example2(1))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Example);
+export default connect(mapStateToProps, mapDispatchToProps)(Example);
