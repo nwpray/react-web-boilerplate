@@ -1,38 +1,41 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  target: 'web',
   entry: {
-    index: path.resolve('src/index.jsx')
+    index: path.resolve('src/index.jsx'),
   },
   output: {
+    path: path.resolve('dist'),
     filename: '[name].js',
-    path: path.resolve('dist')
   },
   resolve: {
     extensions: [' ', '.js', '.jsx'],
     alias: {
-      '@': path.resolve('src')
-    }
+      '@': path.resolve('src'),
+    },
   },
   devServer: {
-    contentBase: path.resolve('dist')
+    static: {
+      directory: path.resolve('dist'),
+    },
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         use: 'babel-loader',
-        include: path.resolve('src')
-      }
-    ]
+        include: path.resolve('src'),
+      },
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin('dist'),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve('src/index.html')
-    })
-  ]
+      template: path.resolve('src/index.html'),
+    }),
+  ],
 };
