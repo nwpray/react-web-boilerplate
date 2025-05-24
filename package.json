@@ -1,6 +1,6 @@
 {
   "name": "@nicholasdigital/react-web-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react web application boilerplate using Webpack, Babel, ESLint, Prettier, and Jest.",
   "main": "dist/index.js",
   "scripts": {
