@@ -1,6 +1,6 @@
 {
-  "name": "react-web-boilerplate",
-  "version": "1.0.0",
+  "name": "@nicholasdigital/react-web-boilerplate",
+  "version": "1.0.2",
   "description": "A react web application boilerplate using Webpack, Babel, ESLint, Prettier, and Jest.",
   "main": "dist/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "@commitlint",
     "jest"
   ],
-  "author": "Nick Pray <nickthepray@gmail.com>",
+  "author": "Nick Pray <nicholasdigit@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nwpray/react-web-boilerplate/issues"
